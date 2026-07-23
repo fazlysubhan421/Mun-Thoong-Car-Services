@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mun Thoong Car Services Sdn Bhd | Honest & Trusted Car Workshop in Bangsar</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0b1325',
+                            dark: '#0f172a',
+                            slate: '#1e293b',
+                            amber: '#f59e0b',
+                            orange: '#ea580c',
+                            lightBg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(11, 19, 37, 0.95) 0%, rgba(15, 23, 42, 0.82) 60%, rgba(245, 158, 11, 0.15) 100%);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 12px 24px -10px rgba(245, 158, 11, 0.15);
+        }
+        .glow-amber {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-amber selection:text-brand-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-orange-600 text-slate-950 font-semibold text-xs md:text-sm py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-2">
+            <div class="hidden md:flex items-center space-x-4">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Bangsar, Kuala Lumpur</span>
+                <span><i class="fa-solid fa-clock mr-1"></i> Open Monday - Saturday (8:30 AM - 6:00 PM)</span>
+            </div>
+            <div class="w-full md:w-auto flex justify-between md:justify-end items-center space-x-4">
+                <span class="inline-flex items-center text-slate-900 font-bold">
+                    <i class="fa-solid fa-shield-halved mr-1.5"></i> Guaranteed Transparency & No Hidden Charges
+                </span>
+                <a href="tel:0322019024" class="bg-slate-950 text-amber-400 hover:text-white px-3 py-0.5 rounded-full text-xs transition duration-200">
+                    <i class="fa-solid fa-phone text-xs mr-1"></i> 03-2201 9024
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg md:text-xl font-extrabold tracking-tight text-white block leading-tight">
+                            MUN THOONG
+                        </span>
+                        <span class="text-xs text-amber-400 font-medium tracking-wider block">
+                            CAR SERVICES SDN BHD
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#about" class="hover:text-amber-400 transition-colors">Home & About</a>
+                    <a href="#services" class="hover:text-amber-400 transition-colors">Services</a>
+                    <a href="#testimonials" class="hover:text-amber-400 transition-colors">Customer Reviews</a>
+                    <a href="#location" class="hover:text-amber-400 transition-colors">Location & Contact</a>
+                </nav>
+
+                <!-- Right Action Buttons -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <!-- Dynamic Operating Hours Status Widget -->
+                    <div id="statusWidget" class="hidden md:inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse" id="statusDot"></span>
+                        <span id="statusText">Open Now (8:30 AM)</span>
+                    </div>
+
+                    <a href="tel:0322019024" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl font-bold text-sm bg-amber-500 text-slate-950 hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/20 active:scale-95 transition-all">
+                        <i class="fa-solid fa-phone-volume mr-2"></i> 03-2201 9024
+                    </a>
+                </div>
+
+                <!-- Mobile menu toggle button -->
+                <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2.5 px-3 rounded-lg text-slate-200 font-medium hover:bg-slate-800 hover:text-amber-400">About Us</a>
+            <a href="#services" class="block py-2.5 px-3 rounded-lg text-slate-200 font-medium hover:bg-slate-800 hover:text-amber-400">Our Services</a>
+            <a href="#testimonials" class="block py-2.5 px-3 rounded-lg text-slate-200 font-medium hover:bg-slate-800 hover:text-amber-400">Google Reviews (4.8★)</a>
+            <a href="#location" class="block py-2.5 px-3 rounded-lg text-slate-200 font-medium hover:bg-slate-800 hover:text-amber-400">Location & Hours</a>
+            
+            <div class="pt-2 border-t border-slate-800 space-y-2">
+                <a href="tel:0322019024" class="w-full flex items-center justify-center py-3 px-4 rounded-xl font-bold bg-amber-500 text-slate-950">
+                    <i class="fa-solid fa-phone mr-2"></i> Call 03-2201 9024
+                </a>
+                <a href="https://maps.google.com/?q=20,+Persiaran+Ara+Kiri,+Bangsar,+59100+Kuala+Lumpur" target="_blank" class="w-full flex items-center justify-center py-3 px-4 rounded-xl font-semibold bg-slate-800 text-slate-200 border border-slate-700">
+                    <i class="fa-solid fa-diamond-turn-right mr-2 text-amber-400"></i> Get Directions (Google Maps)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative min-h-[85vh] flex items-center pt-8 pb-16 overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=2000&q=80" 
+                     alt="Mun Thoong Car Services Bangsar mechanic servicing a vehicle" 
+                     class="w-full h-full object-cover object-center filter brightness-50"
+                     onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1e293b/f59e0b?text=Mun+Thoong+Car+Services+Bangsar';">
+                <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        
+                        <!-- Google Rating Badge -->
+                        <div class="inline-flex items-center space-x-2 bg-slate-900/80 backdrop-blur border border-amber-500/30 rounded-full px-4 py-2 shadow-lg">
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-white font-bold text-sm">4.8</span>
+                            <span class="text-slate-400 text-xs">|</span>
+                            <span class="text-slate-300 text-xs font-medium flex items-center">
+                                <i class="fa-brands fa-google text-blue-400 mr-1.5"></i> 467+ Google Reviews
+                            </span>
+                        </div>
+
+                        <!-- Main Headline -->
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                            A Car Workshop You Can <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Trust</span> in Bangsar
+                        </h1>
+
+                        <!-- Sub-headline -->
+                        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Honest, transparent, and prompt automotive maintenance. No hidden charges, no false diagnoses — only professional mechanic service prioritizing your vehicle's safety.
+                        </p>
+
+                        <!-- Highlights list -->
+                        <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-y-2 gap-x-6 text-sm text-slate-300 font-medium">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Transparent Quotations
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Certified Mechanics
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Strategic Bangsar Location
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
+                            <a href="tel:0322019024" class="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-lg shadow-amber-500/25 transition duration-200 transform hover:-translate-y-0.5 flex items-center justify-center text-base">
+                                <i class="fa-solid fa-phone text-lg mr-2.5"></i> Call Now (03-2201 9024)
+                            </a>
+                            <a href="https://maps.google.com/?q=20,+Persiaran+Ara+Kiri,+Bangsar,+59100+Kuala+Lumpur" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-200 bg-slate-800/90 hover:bg-slate-700 hover:text-white border border-slate-700 transition duration-200 flex items-center justify-center text-base">
+                                <i class="fa-solid fa-location-arrow text-amber-400 mr-2.5"></i> Get Directions
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Quick Contact Glass Card -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-2xl relative border-amber-500/20">
+                            <div class="absolute -top-3 right-6 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                                Fast Bangsar Service
+                            </div>
+
+                            <h2 class="text-xl font-bold text-white mb-2 flex items-center">
+                                <i class="fa-solid fa-car-on text-amber-400 mr-2.5"></i> Having Car Trouble?
+                            </h2>
+                            <p class="text-slate-300 text-sm mb-6">
+                                Bring your car to our workshop or call us for initial diagnostic inquiries & transparent pricing.
+                            </p>
+
+                            <!-- Quick Specs / Hours Badge -->
+                            <div class="space-y-3 bg-slate-900/60 p-4 rounded-xl border border-slate-800 text-sm mb-6">
+                                <div class="flex justify-between items-center pb-2 border-b border-slate-800">
+                                    <span class="text-slate-400"><i class="fa-solid fa-store mr-2 text-amber-400"></i>Workshop Status:</span>
+                                    <span class="font-bold text-emerald-400 flex items-center">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-ping"></span>
+                                        Open (Opens 8:30 AM)
+                                    </span>
+                                </div>
+                                <div class="flex justify-between items-center pb-2 border-b border-slate-800">
+                                    <span class="text-slate-400"><i class="fa-solid fa-map-pin mr-2 text-amber-400"></i>Address:</span>
+                                    <span class="font-semibold text-white text-right">Persiaran Ara Kiri, Bangsar</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-400"><i class="fa-solid fa-star mr-2 text-amber-400"></i>Customer Rating:</span>
+                                    <span class="font-bold text-amber-400">4.8 / 5.0 ( highly recommended )</span>
+                                </div>
+                            </div>
+
+                            <!-- Emergency Action Callout -->
+                            <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-center">
+                                <span class="text-xs uppercase font-bold text-amber-400 tracking-wider block mb-1">
+                                    <i class="fa-solid fa-triangle-exclamation mr-1"></i> Emergency Car Breakdown?
+                                </span>
+                                <a href="tel:0322019024" class="text-lg font-black text-white hover:text-amber-400 transition-colors">
+                                    Tap Here: 03-2201 9024
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST & METRICS BANNER -->
+        <section class="bg-slate-900 border-y border-slate-800 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    
+                    <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1">4.8 ★</div>
+                        <div class="text-sm font-semibold text-white">467+ Google Reviews</div>
+                        <p class="text-xs text-slate-400 mt-1">Trusted by Bangsar & KL drivers</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1">100%</div>
+                        <div class="text-sm font-semibold text-white">Transparent Pricing</div>
+                        <p class="text-xs text-slate-400 mt-1">Zero hidden fees or surprises</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1">10+</div>
+                        <div class="text-sm font-semibold text-white">Years of Experience</div>
+                        <p class="text-xs text-slate-400 mt-1">Expert mechanics for all car types</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+                        <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1">Fast</div>
+                        <div class="text-sm font-semibold text-white">Response & Service</div>
+                        <p class="text-xs text-slate-400 mt-1">Accurate & efficient solutions</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Visual / Workshop Image Grid -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+                            <img src="https://lh3.googleusercontent.com/d/1W07V7V1W2UrmL1Fdd3HoO5jsNomiEgIO" 
+                                 alt="Mun Thoong Car Services Workshop Bangsar" 
+                                 class="w-full h-80 object-cover"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/1e293b/f59e0b?text=Mun+Thoong+Workshop';">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-6">
+                                <span class="bg-amber-500 text-slate-950 font-bold text-xs px-2.5 py-1 rounded-md uppercase tracking-wider">
+                                    Bangsar Location
+                                </span>
+                                <h3 class="text-lg font-bold text-white mt-2">Clean & Disciplined Car Maintenance</h3>
+                            </div>
+                        </div>
+
+                        <!-- Quote Highlight Card -->
+                        <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm italic relative">
+                            <i class="fa-solid fa-quote-left text-2xl text-amber-500/40 absolute top-3 left-3"></i>
+                            <p class="relative z-10 pl-6">
+                                "Our core value is simple: Explain the actual fault clearly, show replacement parts transparently, and provide honest pricing without gimmicks."
+                            </p>
+                            <div class="mt-3 text-right font-semibold text-amber-400 not-italic text-xs">
+                                — The Mun Thoong Car Services Team
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right About Description -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <div class="inline-flex items-center space-x-2 text-amber-400 font-bold text-sm tracking-widest uppercase mb-2">
+                                <i class="fa-solid fa-wrench text-xs"></i> <span>About Our Workshop</span>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                                A Clean, Transparent & Trustworthy Automotive Workshop in Bangsar
+                            </h2>
+                        </div>
+
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            <strong>Mun Thoong Car Services Sdn Bhd</strong> has been serving the Bangsar community and greater Kuala Lumpur with an unwavering commitment to quality workmanship and honesty. We understand that finding a truly transparent mechanic can be challenging — which is why we strictly uphold complete transparency in every repair.
+                        </p>
+
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Whether your vehicle requires routine oil servicing, emergency battery replacement, or complex transmission diagnostics, our experienced technicians are ready to assist with clear explanations before any work begins.
+                        </p>
+
+                        <!-- Key Pillars Grid -->
+                        <div class="grid sm:grid-cols-3 gap-4 pt-4">
+                            
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 hover:border-amber-500/50 transition duration-200">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-base mb-1">Honest & Transparent</h3>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    No hidden charges. Detailed estimates approved before repair.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 hover:border-amber-500/50 transition duration-200">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-base mb-1">Expert Mechanics</h3>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Highly experienced technicians handling Asian, Continental, and Local vehicles.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 hover:border-amber-500/50 transition duration-200">
+                                <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl font-bold mb-3">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-base mb-1">Fast Response</h3>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Emergency breakdown assistance near Bangsar & Universiti Malaya.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- Location Callout Tag -->
+                        <div class="pt-2 flex items-center space-x-3 text-slate-400 text-sm border-t border-slate-800">
+                            <i class="fa-solid fa-location-dot text-amber-400"></i>
+                            <span>Located at <strong>20, Persiaran Ara Kiri, Bangsar</strong> (Plus Code: 4MH9+4X Kuala Lumpur)</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-20 bg-slate-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-amber-400 font-bold text-sm tracking-widest uppercase">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> <span>Our Comprehensive Services</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Automotive Expertise You Can Count On
+                    </h2>
+                    <p class="text-slate-400 text-base">
+                        All services are performed to strict safety standards using modern diagnostic equipment.
+                    </p>
+                </div>
+
+                <!-- Services Cards Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Service Card 1 -->
+                    <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl font-bold mb-6 border border-amber-500/20">
+                                <i class="fa-solid fa-car-battery"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Car Battery Replacement</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Free battery health test, fresh brand-name battery replacement with official warranty and no hidden charges.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-amber-400 font-semibold"><i class="fa-solid fa-clock mr-1"></i> Fast Service</span>
+                            <a href="#contact" onclick="prefillService('Car Battery Replacement')" class="text-xs font-bold text-slate-200 hover:text-amber-400 flex items-center">
+                                Book / Inquire <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl font-bold mb-6 border border-amber-500/20">
+                                <i class="fa-solid fa-dharmachakra"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Tyre Replacement & Service</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                New tire fitting, wheel balancing, alignment, and puncture repairs for safe and smooth driving.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-amber-400 font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Wheel Safety</span>
+                            <a href="#contact" onclick="prefillService('Tyre Replacement & Service')" class="text-xs font-bold text-slate-200 hover:text-amber-400 flex items-center">
+                                Book / Inquire <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl font-bold mb-6 border border-amber-500/20">
+                                <i class="fa-solid fa-truck-pickup"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Emergency Breakdown Repair</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Emergency mechanic assistance if your vehicle breaks down near Bangsar and Universiti Malaya.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-amber-400 font-semibold"><i class="fa-solid fa-bolt mr-1"></i> Immediate Help</span>
+                            <a href="tel:0322019024" class="text-xs font-bold text-amber-400 hover:underline flex items-center">
+                                Call Direct <i class="fa-solid fa-phone ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl font-bold mb-6 border border-amber-500/20">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Computer Diagnostics & Transmission</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Latest computer diagnostic scanning to identify engine issues, transmission faults, and vehicle electronics.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-amber-400 font-semibold"><i class="fa-solid fa-laptop-code mr-1"></i> Computer Diagnostics</span>
+                            <a href="#contact" onclick="prefillService('Computer Diagnostics & Transmission')" class="text-xs font-bold text-slate-200 hover:text-amber-400 flex items-center">
+                                Book / Inquire <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl font-bold mb-6 border border-amber-500/20">
+                                <i class="fa-solid fa-oil-can"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">General Servicing & Preventive Maintenance</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Engine oil change, oil filter replacement, spark plugs, brake fluid, and a comprehensive 21-point safety inspection.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-amber-400 font-semibold"><i class="fa-solid fa-list-check mr-1"></i> Full Checkup</span>
+                            <a href="#contact" onclick="prefillService('General Servicing & Preventive Maintenance')" class="text-xs font-bold text-slate-200 hover:text-amber-400 flex items-center">
+                                Book / Inquire <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="glass-card rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl font-bold mb-6 border border-amber-500/20">
+                                <i class="fa-solid fa-snowflake"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Aircon & Brake Services</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                                Brake system maintenance (brake pads/discs) and air conditioning servicing to keep your ride cool and safe.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs text-amber-400 font-semibold"><i class="fa-solid fa-temperature-arrow-down mr-1"></i> Maximum Comfort</span>
+                            <a href="#contact" onclick="prefillService('Aircon & Brake Services')" class="text-xs font-bold text-slate-200 hover:text-amber-400 flex items-center">
+                                Book / Inquire <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Callout Banner -->
+                <div class="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-comments text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white">Have Other Repair Inquiries?</h4>
+                            <p class="text-slate-400 text-sm">Send us your car details for a free initial assessment.</p>
+                        </div>
+                    </div>
+                    <a href="tel:0322019024" class="shrink-0 px-6 py-3 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition">
+                        <i class="fa-solid fa-phone mr-2"></i> Contact Mechanic
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS / REVIEWS SECTION -->
+        <section id="testimonials" class="py-20 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Top Header & Google Badge -->
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700 rounded-full px-4 py-1.5 text-amber-400 font-bold text-xs">
+                        <i class="fa-brands fa-google text-blue-400"></i>
+                        <span>AUTHENTIC GOOGLE CUSTOMER REVIEWS</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        What Our Customers Say
+                    </h2>
+
+                    <div class="flex flex-col items-center justify-center space-y-2 pt-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-4xl font-black text-amber-400">4.8</span>
+                            <div class="flex text-amber-400 text-xl">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm">
+                            Based on <strong>467+ verified reviews</strong> on Google Maps
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Testimonial 1 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-700/60 relative">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex text-amber-400 text-sm">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">Verified Review</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+                                "Very grateful to Alex from Mun Thoong! My car suddenly broke down near Universiti Malaya. He arrived very promptly to assist with the repair and charged a very reasonable fee without taking advantage of the situation."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-slate-800">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                                AI
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Azlan Ibrahim</h4>
+                                <p class="text-xs text-slate-400">Local Driver • Bangsar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-700/60 relative">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex text-amber-400 text-sm">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">Verified Review</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+                                "The staff was extremely friendly and explained the car issue very clearly and professionally. They didn't push for expensive unnecessary replacements, but gave the best options suited for my budget."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-slate-800">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 text-white font-bold flex items-center justify-center text-sm">
+                                SC
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Sarah C.</h4>
+                                <p class="text-xs text-slate-400">Daily Commuter • Kuala Lumpur</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-700/60 relative">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex text-amber-400 text-sm">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="text-xs text-slate-500 font-medium">Verified Review</span>
+                            </div>
+                            <p class="text-slate-300 text-sm leading-relaxed italic mb-6">
+                                "Changing battery here is truly transparent. The mechanic showed the new sealed battery, tested the alternator first, and there were absolutely no hidden fees during payment. Most reliable workshop in Bangsar!"
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-slate-800">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                                KT
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Kevin Tan</h4>
+                                <p class="text-xs text-slate-400">Bangsar Resident</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Google Maps Reviews Link Button -->
+                <div class="mt-12 text-center">
+                    <a href="https://maps.google.com/?q=Mun+Thoong+Car+Services+Sdn+Bhd+Bangsar" target="_blank" class="inline-flex items-center space-x-3 px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold transition duration-200">
+                        <i class="fa-brands fa-google text-amber-400 text-lg"></i>
+                        <span>View All 467 Reviews on Google Maps</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOCATION & CONTACT SECTION -->
+        <section id="location" class="py-20 bg-slate-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-amber-400 font-bold text-sm tracking-widest uppercase">
+                        <i class="fa-solid fa-map-location-dot"></i> <span>Contact & Visit Us</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Conveniently Located in Bangsar
+                    </h2>
+                    <p class="text-slate-400 text-base">
+                        Drop by our workshop or schedule your maintenance appointment in advance.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- Left Contact Info & Map Card -->
+                    <div class="lg:col-span-6 space-y-6">
+                        
+                        <!-- Map Container -->
+                        <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-xl bg-slate-800 h-72 relative">
+                            <!-- Real Google Map Embed for Bangsar Persiaran Ara Kiri -->
+                            <iframe 
+                                title="Mun Thoong Car Services Sdn Bhd Location Map"
+                                class="w-full h-full border-0 filter opacity-90 hover:opacity-100 transition duration-300"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.823977536976!2d101.6687021!3d3.1280386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49f1f0e4b865%3A0x6b13554b5f8be78c!2s20%2C%20Persiaran%20Ara%20Kiri%2C%20Bangsar%2C%2059100%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1710000000000!5m2!1sen!2smy"
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+
+                        <!-- Direct Address & Info Block -->
+                        <div class="glass-card rounded-2xl p-6 space-y-5">
+                            
+                            <!-- Address -->
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Workshop Address</h3>
+                                    <p class="text-white font-medium text-base mt-0.5">
+                                        20, Persiaran Ara Kiri, Bangsar,<br>
+                                        59100 Kuala Lumpur, Federal Territory of Kuala Lumpur
+                                    </p>
+                                    <div class="mt-2 text-xs text-amber-400 font-mono">
+                                        <i class="fa-solid fa-hashtag mr-1"></i> Plus Code: 4MH9+4X Kuala Lumpur
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Operating Hours -->
+                            <div class="flex items-start space-x-4 pt-4 border-t border-slate-800">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="w-full">
+                                    <div class="flex justify-between items-center">
+                                        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Operating Hours</h3>
+                                        <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-bold">Opens 8:30 AM</span>
+                                    </div>
+                                    <p class="text-white font-medium text-sm mt-1">
+                                        Monday - Saturday: <span class="text-amber-400 font-bold">8:30 AM – 6:00 PM</span>
+                                    </p>
+                                    <p class="text-slate-400 text-xs mt-0.5">
+                                        Sunday & Public Holidays: Closed (Emergency calls subject to availability)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start space-x-4 pt-4 border-t border-slate-800">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg shrink-0 mt-1">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Direct Phone Line</h3>
+                                    <a href="tel:0322019024" class="text-xl font-black text-white hover:text-amber-400 transition-colors block mt-0.5">
+                                        03-2201 9024
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Direct Nav Buttons -->
+                            <div class="pt-2 grid grid-cols-2 gap-3">
+                                <a href="https://maps.google.com/?q=20,+Persiaran+Ara+Kiri,+Bangsar,+59100+Kuala+Lumpur" target="_blank" class="px-4 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-center text-xs sm:text-sm flex items-center justify-center">
+                                    <i class="fa-solid fa-diamond-turn-right mr-1.5"></i> Get Directions
+                                </a>
+                                <a href="tel:0322019024" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-center text-xs sm:text-sm border border-slate-700 flex items-center justify-center">
+                                    <i class="fa-solid fa-phone mr-1.5 text-amber-400"></i> Call Now
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Right Appointment & Inquiry Form -->
+                    <div class="lg:col-span-6" id="contact">
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 border-slate-700 relative">
+                            <h3 class="text-2xl font-bold text-white mb-2">Send Inquiry / Book Service</h3>
+                            <p class="text-slate-400 text-sm mb-6">
+                                Fill out the form below. Our team will get back to you promptly.
+                            </p>
+
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label for="userName" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                                        Your Name *
+                                    </label>
+                                    <input type="text" id="userName" required placeholder="e.g. Mr. Ahmad" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-sm">
+                                </div>
+
+                                <div>
+                                    <label for="userPhone" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                                        Phone / WhatsApp No. *
+                                    </label>
+                                    <input type="tel" id="userPhone" required placeholder="e.g. 012-3456789" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-sm">
+                                </div>
+
+                                <div>
+                                    <label for="carModel" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                                        Car Model & Year
+                                    </label>
+                                    <input type="text" id="carModel" placeholder="e.g. Perodua Myvi 2018 / Honda Civic" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-sm">
+                                </div>
+
+                                <div>
+                                    <label for="serviceType" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                                        Service Required / Issue Type
+                                    </label>
+                                    <select id="serviceType" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-sm">
+                                        <option value="General Servicing & Maintenance">General Servicing & Maintenance (Oil Change)</option>
+                                        <option value="Car Battery Replacement">Car Battery Replacement</option>
+                                        <option value="Tyre Replacement & Service">Tyre Replacement & Service</option>
+                                        <option value="Computer Diagnostics & Transmission">Engine & Transmission Diagnostics</option>
+                                        <option value="Emergency Breakdown Repair">Emergency Breakdown Repair</option>
+                                        <option value="Other Issues">Other Issues / General Inspection</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="userMessage" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">
+                                        Brief Description of Issue
+                                    </label>
+                                    <textarea id="userMessage" rows="3" placeholder="Describe your car symptoms (e.g. engine noise, warning light on, etc)..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-sm"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-extrabold text-base hover:from-amber-400 hover:to-orange-400 shadow-lg shadow-amber-500/20 active:scale-98 transition duration-200">
+                                    <i class="fa-solid fa-paper-plane mr-2"></i> Submit Service Inquiry
+                                </button>
+                                
+                                <p class="text-center text-xs text-slate-500 pt-2">
+                                    <i class="fa-solid fa-lock mr-1"></i> Your information is confidential and used only for quotation purposes.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="py-16 bg-slate-950">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Frequently Asked Questions (FAQ)</h2>
+                    <p class="text-slate-400 text-sm mt-2">Transparent answers for your peace of mind on the road.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+                        <h3 class="font-bold text-white text-base flex items-center">
+                            <i class="fa-solid fa-circle-question text-amber-400 mr-2.5"></i>
+                            Will I receive a price quotation before repair work begins?
+                        </h3>
+                        <p class="text-slate-300 text-sm mt-2 pl-7">
+                            Yes, absolutely. We always perform an initial inspection first and provide a detailed quotation (including parts and labor costs). Repair work only commences after your explicit approval.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+                        <h3 class="font-bold text-white text-base flex items-center">
+                            <i class="fa-solid fa-circle-question text-amber-400 mr-2.5"></i>
+                            Do batteries and replacement parts come with a warranty?
+                        </h3>
+                        <p class="text-slate-300 text-sm mt-2 pl-7">
+                            All battery replacements and new auto parts come with official manufacturer warranties. Proof of purchase and warranty documentation will be provided in writing.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+                        <h3 class="font-bold text-white text-base flex items-center">
+                            <i class="fa-solid fa-circle-question text-amber-400 mr-2.5"></i>
+                            What if my car breaks down near Bangsar or Universiti Malaya?
+                        </h3>
+                        <p class="text-slate-300 text-sm mt-2 pl-7">
+                            You can directly call our hotline at <strong>03-2201 9024</strong>. Our mechanic team is ready to provide immediate advice or arrange on-site diagnostic assistance depending on location.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-sm pt-12 pb-24 md:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-black text-xl">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div>
+                            <span class="text-lg font-extrabold text-white block leading-tight">
+                                MUN THOONG CAR SERVICES SDN BHD
+                            </span>
+                            <span class="text-xs text-amber-400 font-medium">
+                                Registered Workshop • Bangsar, Kuala Lumpur
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-md">
+                        The premier automotive service workshop for the Bangsar community. Built on values of honesty, transparent pricing, and comprehensive mechanical expertise.
+                    </p>
+                    <div class="flex items-center space-x-3 text-slate-300 pt-2">
+                        <span class="text-xs font-semibold">Google Rating:</span>
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-white font-bold">4.8 / 5.0</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-amber-400 transition">About Workshop</a></li>
+                        <li><a href="#services" class="hover:text-amber-400 transition">Our Services</a></li>
+                        <li><a href="#testimonials" class="hover:text-amber-400 transition">Google Reviews</a></li>
+                        <li><a href="#location" class="hover:text-amber-400 transition">Operating Hours & Map</a></li>
+                        <li><a href="#contact" class="hover:text-amber-400 transition">Send Service Inquiry</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Contact Us</h4>
+                    <p class="text-xs text-slate-300 mb-2">
+                        <i class="fa-solid fa-phone text-amber-400 mr-2"></i> 03-2201 9024
+                    </p>
+                    <p class="text-xs text-slate-300 mb-2">
+                        <i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> 20, Persiaran Ara Kiri, Bangsar, 59100 KL
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        <i class="fa-solid fa-clock text-amber-400 mr-2"></i> Opens 8:30 AM (Monday - Saturday)
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-slate-900 text-center md:flex md:justify-between items-center text-xs text-slate-500">
+                <p>© <span id="year"></span> Mun Thoong Car Services Sdn Bhd. All Rights Reserved.</p>
+                <p class="mt-2 md:mt-0">Trusted by over 467+ drivers in Bangsar & Kuala Lumpur.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Call Bar -->
+    <div class="fixed bottom-0 inset-x-0 bg-slate-900 border-t border-slate-800 p-3 z-40 md:hidden flex items-center justify-between space-x-2 shadow-2xl">
+        <a href="tel:0322019024" class="flex-1 py-3 bg-amber-500 text-slate-950 rounded-xl font-black text-center text-sm flex items-center justify-center">
+            <i class="fa-solid fa-phone mr-2"></i> Call: 03-2201 9024
+        </a>
+        <a href="https://maps.google.com/?q=20,+Persiaran+Ara+Kiri,+Bangsar,+59100+Kuala+Lumpur" target="_blank" class="px-4 py-3 bg-slate-800 text-slate-200 border border-slate-700 rounded-xl font-bold text-xs flex items-center justify-center">
+            <i class="fa-solid fa-location-arrow text-amber-400 mr-1.5"></i> Directions
+        </a>
+    </div>
+
+    <!-- Modal Toast Notification Container -->
+    <div id="toastModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-slate-900 border border-amber-500/40 rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl transform scale-95 transition-transform duration-300" id="toastCard">
+            <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-2xl mb-4 border border-emerald-500/30">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Inquiry Received!</h3>
+            <p class="text-slate-300 text-sm mb-6" id="toastMessage">
+                Thank you. The Mun Thoong Car Services mechanics team will contact you shortly.
+            </p>
+            <button onclick="closeToast()" class="w-full py-3 bg-amber-500 text-slate-950 font-bold rounded-xl hover:bg-amber-400 transition">
+                Close Window
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        // Close mobile drawer when clicking a nav link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+
+        // Dynamic status check based on current time
+        function checkShopStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0 is Sunday
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            const timeInMinutes = hour * 60 + minute;
+
+            const openTime = 8 * 60 + 30; // 8:30 AM (510 min)
+            const closeTime = 18 * 60;    // 6:00 PM (1080 min)
+
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            if (day !== 0 && timeInMinutes >= openTime && timeInMinutes < closeTime) {
+                if (statusDot && statusText) {
+                    statusDot.className = "w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse";
+                    statusText.textContent = "Open Now (Closes 6:00 PM)";
+                }
+            } else {
+                if (statusDot && statusText) {
+                    statusDot.className = "w-2 h-2 rounded-full bg-rose-500 mr-2";
+                    statusText.textContent = "Closed / Opens 8:30 AM";
+                }
+            }
+        }
+        checkShopStatus();
+
+        // Prefill form service option
+        function prefillService(serviceName) {
+            const selectEl = document.getElementById('serviceType');
+            if (selectEl) {
+                selectEl.value = serviceName;
+            }
+        }
+
+        // Handle Contact Form Submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('userName').value;
+            const phone = document.getElementById('userPhone').value;
+            const service = document.getElementById('serviceType').value;
+
+            // Show Toast Modal
+            const modal = document.getElementById('toastModal');
+            const card = document.getElementById('toastCard');
+            const messageEl = document.getElementById('toastMessage');
+
+            messageEl.innerHTML = `Thank you <strong>${name}</strong> (${phone}). Your inquiry regarding <strong>${service}</strong> has been received. Our team will contact you shortly.`;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            card.classList.remove('scale-95');
+            card.classList.add('scale-100');
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+        }
+
+        function closeToast() {
+            const modal = document.getElementById('toastModal');
+            const card = document.getElementById('toastCard');
+
+            card.classList.remove('scale-100');
+            card.classList.add('scale-95');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+    </script>
+</body>
+</html>
